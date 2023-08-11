@@ -11,6 +11,7 @@
 		F7873E672A7B07AD00DE4CE2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7873E662A7B07AD00DE4CE2 /* ContentView.swift */; };
 		F7873E692A7B07B300DE4CE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7873E682A7B07B300DE4CE2 /* Assets.xcassets */; };
 		F7873E6D2A7B07B300DE4CE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7873E6C2A7B07B300DE4CE2 /* Preview Assets.xcassets */; };
+		F78DDD202A830E4F008CC70C /* Workshop.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78DDD1F2A830E4F008CC70C /* Workshop.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		F7873E682A7B07B300DE4CE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7873E6A2A7B07B300DE4CE2 /* Cargarage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cargarage.entitlements; sourceTree = "<group>"; };
 		F7873E6C2A7B07B300DE4CE2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F78DDD1F2A830E4F008CC70C /* Workshop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workshop.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 		F7873E632A7B07AD00DE4CE2 /* Cargarage */ = {
 			isa = PBXGroup;
 			children = (
+				F78DDD1E2A830DE9008CC70C /* View */,
 				F7873E642A7B07AD00DE4CE2 /* CargarageApp.swift */,
 				F7873E662A7B07AD00DE4CE2 /* ContentView.swift */,
 				F7873E682A7B07B300DE4CE2 /* Assets.xcassets */,
@@ -67,6 +70,14 @@
 				F7873E6C2A7B07B300DE4CE2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F78DDD1E2A830DE9008CC70C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F78DDD1F2A830E4F008CC70C /* Workshop.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7873E672A7B07AD00DE4CE2 /* ContentView.swift in Sources */,
+				F78DDD202A830E4F008CC70C /* Workshop.swift in Sources */,
 				F7873E652A7B07AD00DE4CE2 /* CargarageApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
