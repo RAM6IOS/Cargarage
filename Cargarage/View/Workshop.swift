@@ -10,8 +10,28 @@ import MapKit
 import CoreLocation
 import CoreLocationUI
 
+class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
+    let manager = CLLocationManager()
+
+    @Published var location: CLLocationCoordinate2D?
+
+    override init() {
+        super.init()
+        manager.delegate = self
+    }
+
+    func requestLocation() {
+        manager.requestLocation()
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        location = locations.first?.coordinate
+    }
+}
+
 struct Workshop: View {
     @ObservedObject var model =  LocationManger()
+    @StateObject var locationManager = LocationManager()
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 36.552916, longitude: 3.128917), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
     let annotations = [
@@ -24,7 +44,7 @@ struct Workshop: View {
     var body: some View {
         NavigationView {
                        ZStack(alignment: .bottomTrailing) {
-                           Map(coordinateRegion: $region, showsUserLocation: true, userTrackingMode: .constant(.follow),  annotationItems: annotations) { location in
+                           Map(coordinateRegion: $model.region, showsUserLocation: true, userTrackingMode: .constant(.follow),  annotationItems: annotations) { location in
                                MapAnnotation(coordinate: CLLocationCoordinate2D(latitude:location.coordinate.latitude ,
                                                                                 longitude: location.coordinate.longitude)) {
                                   
@@ -36,7 +56,13 @@ struct Workshop: View {
                                }
                            }
                            LocationButton(.currentLocation) {
+                              // locationManager.requestLocation()
+                               
+
+                            
                                            model.requesAllowOnceLocationPermission()
+                              // print(model.requesAllowOnceLocationPermission())
+                               
                                        }
                                        .foregroundColor(.white)
                                        .cornerRadius(8)
