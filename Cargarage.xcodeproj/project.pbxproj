@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52AC6EA62AA26EAB00F0E4B6 /* LocationManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AC6EA52AA26EAB00F0E4B6 /* LocationManger.swift */; };
 		F7873E652A7B07AD00DE4CE2 /* CargarageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7873E642A7B07AD00DE4CE2 /* CargarageApp.swift */; };
 		F7873E672A7B07AD00DE4CE2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7873E662A7B07AD00DE4CE2 /* ContentView.swift */; };
 		F7873E692A7B07B300DE4CE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7873E682A7B07B300DE4CE2 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		52AC6EA52AA26EAB00F0E4B6 /* LocationManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManger.swift; sourceTree = "<group>"; };
 		F7873E612A7B07AD00DE4CE2 /* Cargarage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cargarage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7873E642A7B07AD00DE4CE2 /* CargarageApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargarageApp.swift; sourceTree = "<group>"; };
 		F7873E662A7B07AD00DE4CE2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,6 +37,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52AC6EA42AA26E6700F0E4B6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				52AC6EA52AA26EAB00F0E4B6 /* LocationManger.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		F7873E582A7B07AD00DE4CE2 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +64,7 @@
 		F7873E632A7B07AD00DE4CE2 /* Cargarage */ = {
 			isa = PBXGroup;
 			children = (
+				52AC6EA42AA26E6700F0E4B6 /* ViewModel */,
 				F78DDD1E2A830DE9008CC70C /* View */,
 				F7873E642A7B07AD00DE4CE2 /* CargarageApp.swift */,
 				F7873E662A7B07AD00DE4CE2 /* ContentView.swift */,
@@ -152,6 +163,7 @@
 			files = (
 				F7873E672A7B07AD00DE4CE2 /* ContentView.swift in Sources */,
 				F78DDD202A830E4F008CC70C /* Workshop.swift in Sources */,
+				52AC6EA62AA26EAB00F0E4B6 /* LocationManger.swift in Sources */,
 				F7873E652A7B07AD00DE4CE2 /* CargarageApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

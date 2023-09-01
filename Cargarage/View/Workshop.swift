@@ -11,6 +11,7 @@ import CoreLocation
 import CoreLocationUI
 
 struct Workshop: View {
+    @ObservedObject var model =  LocationManger()
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 36.552916, longitude: 3.128917), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
     let annotations = [
@@ -35,7 +36,7 @@ struct Workshop: View {
                                }
                            }
                            LocationButton(.currentLocation) {
-                                           //model.requesAllowOnceLocationPermission()
+                                           model.requesAllowOnceLocationPermission()
                                        }
                                        .foregroundColor(.white)
                                        .cornerRadius(8)
@@ -47,9 +48,6 @@ struct Workshop: View {
                                        .labelStyle(.iconOnly)
                                        .symbolVariant(.fill)
                                        .tint(.blue)
-                                       
-                                       
-                                       
                                       // .padding(.bottom, 70)
                     
                                        

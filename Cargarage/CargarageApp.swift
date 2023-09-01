@@ -11,7 +11,7 @@ import SwiftUI
 struct CargarageApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Workshop()
         }
     }
 }
