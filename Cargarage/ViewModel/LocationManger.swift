@@ -10,9 +10,15 @@ import MapKit
 import CoreLocation
 import CoreLocationUI
 
-final class LocationManger: NSObject, ObservableObject, CLLocationManagerDelegate {
+ class LocationManger: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var isPresenting = false
-    @Published    var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 36.552916, longitude:  3.128917), span: MKCoordinateSpan(latitudeDelta: 0.9, longitudeDelta: 0.9))
+       var annotations = [
+           City(name: "London", coordinate: CLLocationCoordinate2D(latitude:36.552696, longitude: 3.108739)),
+           //City(name: "Paris", coordinate: CLLocationCoordinate2D(latitude: 48.8567, longitude: 2.3508)),
+          // City(name: "Rome", coordinate: CLLocationCoordinate2D(latitude: 41.9, longitude: 12.5)),
+          // City(name: "Washington DC", coordinate: CLLocationCoordinate2D(latitude: 38.895111, longitude: -77.036667))
+       ]
+      var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 36.552916, longitude:  3.128917), span: MKCoordinateSpan(latitudeDelta: 0.9, longitudeDelta: 0.9))
     var locationManger =  CLLocationManager()
     override init() {
         super.init()

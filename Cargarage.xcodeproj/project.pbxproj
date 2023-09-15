@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520F8CB92AB4BCF5007BB170 /* annotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520F8CB82AB4BCF5007BB170 /* annotations.swift */; };
+		520F8CBB2AB4D975007BB170 /* UaserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520F8CBA2AB4D975007BB170 /* UaserLocation.swift */; };
 		52A135A62AA36048005C36D4 /* nextexampel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A135A52AA36048005C36D4 /* nextexampel.swift */; };
 		52AC6EA62AA26EAB00F0E4B6 /* LocationManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AC6EA52AA26EAB00F0E4B6 /* LocationManger.swift */; };
 		F7873E652A7B07AD00DE4CE2 /* CargarageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7873E642A7B07AD00DE4CE2 /* CargarageApp.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		520F8CB82AB4BCF5007BB170 /* annotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = annotations.swift; sourceTree = "<group>"; };
+		520F8CBA2AB4D975007BB170 /* UaserLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UaserLocation.swift; sourceTree = "<group>"; };
 		52A135A52AA36048005C36D4 /* nextexampel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nextexampel.swift; sourceTree = "<group>"; };
 		52AC6EA52AA26EAB00F0E4B6 /* LocationManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManger.swift; sourceTree = "<group>"; };
 		52AC6EA72AA289FE00F0E4B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -40,11 +44,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		520F8CB72AB4BCDA007BB170 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				520F8CB82AB4BCF5007BB170 /* annotations.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		52AC6EA42AA26E6700F0E4B6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				52AC6EA52AA26EAB00F0E4B6 /* LocationManger.swift */,
 				52A135A52AA36048005C36D4 /* nextexampel.swift */,
+				520F8CBA2AB4D975007BB170 /* UaserLocation.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -68,6 +81,7 @@
 		F7873E632A7B07AD00DE4CE2 /* Cargarage */ = {
 			isa = PBXGroup;
 			children = (
+				520F8CB72AB4BCDA007BB170 /* Model */,
 				52AC6EA72AA289FE00F0E4B6 /* Info.plist */,
 				52AC6EA42AA26E6700F0E4B6 /* ViewModel */,
 				F78DDD1E2A830DE9008CC70C /* View */,
@@ -166,8 +180,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				520F8CB92AB4BCF5007BB170 /* annotations.swift in Sources */,
 				F7873E672A7B07AD00DE4CE2 /* ContentView.swift in Sources */,
 				52A135A62AA36048005C36D4 /* nextexampel.swift in Sources */,
+				520F8CBB2AB4D975007BB170 /* UaserLocation.swift in Sources */,
 				F78DDD202A830E4F008CC70C /* Workshop.swift in Sources */,
 				52AC6EA62AA26EAB00F0E4B6 /* LocationManger.swift in Sources */,
 				F7873E652A7B07AD00DE4CE2 /* CargarageApp.swift in Sources */,
