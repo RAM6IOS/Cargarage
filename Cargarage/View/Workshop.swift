@@ -18,23 +18,60 @@ struct Workshop: View {
    // @StateObject var locationManager = LocationManager()
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 36.552916, longitude: 3.128917), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
+   // var exmple = City(name: <#String#>, coordinate: <#CLLocationCoordinate2D#>)
+    
    // var annotations = [annotations]
    // @Published var source: Array = [Sources]()
+    var specialty:Array = ["Peinture" ,"scanner","électricité automobile","General mechanic","vidange" ,"clim auto"]
     
-    
+    @State  var searchText = ""
+    var searchableRecipe: [City] {
+                if  searchText.isEmpty{
+                    return model.annotations
+                } else {
+                    let lowercasedQuery = searchText.lowercased()
+                   
+                        return model.annotations.filter({
+                            $0.specialty.lowercased().contains(lowercasedQuery)
+                        })
+                }
+            }
      
 
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottomTrailing) {
-                Map(coordinateRegion: $model.region, showsUserLocation: true, userTrackingMode: .constant(.follow) , annotationItems:model.annotations){ location in
-                    MapAnnotation(coordinate: CLLocationCoordinate2D(latitude:location.coordinate.latitude ,longitude:  location.coordinate.longitude)) {
-                        Image("car-repair")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 44, height: 44)
+                ZStack(alignment: .topLeading){
+                    Map(coordinateRegion: $model.region, showsUserLocation: true, userTrackingMode: .constant(.follow) , annotationItems:searchableRecipe){ location in
+                        MapAnnotation(coordinate: CLLocationCoordinate2D(latitude:location.coordinate.latitude ,longitude:  location.coordinate.longitude)) {
+                            Image("car-repair")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 44, height: 44)
+                        }
                     }
+                    ScrollView(.horizontal){
+                        HStack{
+                            ForEach(specialty, id: \.self) { specialty in
+                                Button{
+                                    searchText = specialty
+                                } label: {
+                                    Text(specialty)
+                                        .padding(.vertical ,10)
+                                        .padding(.horizontal ,20)
+                                }
+                                .cornerRadius(10)
+                                .background(.blue)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                            }
+                        }
+                    }
+                    .padding(.vertical,70)
+                    .padding(.horizontal ,20)
+                    
                 }
+                
                 
                 LocationButton(.currentLocation) {
                     userLocation.requesAllowOnceLocationPermission()
@@ -68,8 +105,11 @@ struct Workshop_Previews: PreviewProvider {
     }
 }
 
-struct City: Identifiable {
+struct City: Identifiable{
     let id = UUID()
     let name: String
     let coordinate: CLLocationCoordinate2D
+    let specialty : String
+    
+  
 }
