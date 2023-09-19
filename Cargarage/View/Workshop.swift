@@ -18,6 +18,8 @@ struct Workshop: View {
    // @StateObject var locationManager = LocationManager()
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 36.552916, longitude: 3.128917), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
+    @State var presentedSheet: City?
+    
    // var exmple = City(name: <#String#>, coordinate: <#CLLocationCoordinate2D#>)
     
    // var annotations = [annotations]
@@ -48,7 +50,19 @@ struct Workshop: View {
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: 44, height: 44)
+                                .onTapGesture {
+                                    presentedSheet = location
+                                    
+                                }
                         }
+                    }
+                    .sheet(item: $presentedSheet) { sheet in
+                        VStack {
+                            Text(sheet.name)
+                            Text(sheet.specialty)
+                        }
+                        .padding()
+                        
                     }
                     ScrollView(.horizontal){
                         HStack{
@@ -59,11 +73,13 @@ struct Workshop: View {
                                     Text(specialty)
                                         .padding(.vertical ,10)
                                         .padding(.horizontal ,20)
+                                        .cornerRadius(10)
+                                        .background(.blue)
+                                        .foregroundColor(.white)
+                                        .cornerRadius(10)
+                                        
                                 }
-                                .cornerRadius(10)
-                                .background(.blue)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
+                                
                             }
                         }
                     }
