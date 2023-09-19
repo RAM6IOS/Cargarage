@@ -12,7 +12,14 @@ import CoreLocation
 import CoreLocationUI
 
 
-
+struct City: Identifiable{
+    let id = UUID()
+    let name: String
+    let coordinate: CLLocationCoordinate2D
+    let specialty : String
+    
+  
+}
 
 
 

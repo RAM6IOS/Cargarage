@@ -73,18 +73,22 @@ struct Workshop: View {
                                     Text(specialty)
                                         .padding(.vertical ,10)
                                         .padding(.horizontal ,20)
-                                        .cornerRadius(10)
-                                        .background(.blue)
-                                        .foregroundColor(.white)
-                                        .cornerRadius(10)
+                                        
                                         
                                 }
+                                //.frame(width:70 , height: 40)
+                                .cornerRadius(10)
+                               
+                                .background(.blue)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
                                 
                             }
                         }
+                        .padding(.vertical,70)
+                       .padding(.horizontal ,20)
                     }
-                    .padding(.vertical,70)
-                    .padding(.horizontal ,20)
+                    
                     
                 }
                 
@@ -121,11 +125,3 @@ struct Workshop_Previews: PreviewProvider {
     }
 }
 
-struct City: Identifiable{
-    let id = UUID()
-    let name: String
-    let coordinate: CLLocationCoordinate2D
-    let specialty : String
-    
-  
-}
