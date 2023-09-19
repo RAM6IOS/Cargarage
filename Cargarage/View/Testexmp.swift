@@ -11,17 +11,7 @@ struct Testexmp: View {
     @ObservedObject var userLocation = LocationManger()
     @State  var searchText = ""
     
-    var searchableRecipe2: [City] {
-                if  searchText.isEmpty{
-                    return userLocation.annotations
-                } else {
-                    let lowercasedQuery = searchText.lowercased()
-                   
-                        return userLocation.annotations.filter({
-                            $0.specialty.lowercased().contains(lowercasedQuery)
-                        })
-                }
-            }
+    
     var searchableRecipe: [City] {
                 if  searchText.isEmpty{
                     return userLocation.annotations
