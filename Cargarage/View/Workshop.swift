@@ -24,7 +24,7 @@ struct Workshop: View {
     
    // var annotations = [annotations]
    // @Published var source: Array = [Sources]()
-    var specialty:Array = ["Peinture" ,"scanner","électricité automobile","General mechanic","vidange" ,"clim auto"]
+    var specialty:Array = ["General mechanic", "électricité automobile","Peinture" ,"scanner","vidange" ,"clim auto"]
     
     @State  var searchText = ""
     var searchableRecipe: [Garage] {
@@ -70,16 +70,26 @@ struct Workshop: View {
                                 Button{
                                     searchText = specialty
                                 } label: {
-                                    Text(specialty)
-                                        .padding(.vertical ,10)
-                                        .padding(.horizontal ,20)
+                                    HStack(spacing: 8){
+                                        Image(specialty)
+                                            .resizable()
+                                            
+                                            .frame(width: 30 ,height: 30)
+                                        Text(specialty)
+                                            
+                                    }
+                                    .foregroundColor(.black)
+                                    .font(.body)
+                                    .padding(.vertical ,10)
+                                    .padding(.horizontal ,20)
                                         
                                         
                                 }
+                                
                                 //.frame(width:70 , height: 40)
                                 .cornerRadius(10)
                                
-                                .background(.blue)
+                                .background(.orange)
                                 .foregroundColor(.white)
                                 .cornerRadius(10)
                                 
@@ -97,7 +107,9 @@ struct Workshop: View {
                     userLocation.requesAllowOnceLocationPermission()
                 }
                 .foregroundColor(.white)
+                .background(.orange)
                 .cornerRadius(8)
+                
                 //.frame(width: 100 ,height:200)
                 .font(.system(size: 30))
                 .clipShape(Circle())
@@ -105,7 +117,7 @@ struct Workshop: View {
                 
                 .labelStyle(.iconOnly)
                 .symbolVariant(.fill)
-                .tint(.blue)
+                .tint(.orange)
                 // .padding(.bottom, 70)
                 
             }.ignoresSafeArea(.all)
