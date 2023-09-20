@@ -12,7 +12,7 @@ struct Testexmp: View {
     @State  var searchText = ""
     
     
-    var searchableRecipe: [City] {
+    var searchableRecipe: [Garage] {
                 if  searchText.isEmpty{
                     return userLocation.annotations
                 } else {
