@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		520F8CB92AB4BCF5007BB170 /* annotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520F8CB82AB4BCF5007BB170 /* annotations.swift */; };
+		520F8CB92AB4BCF5007BB170 /* Garage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520F8CB82AB4BCF5007BB170 /* Garage.swift */; };
 		520F8CBB2AB4D975007BB170 /* UaserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520F8CBA2AB4D975007BB170 /* UaserLocation.swift */; };
 		520F8CBD2AB8BFD3007BB170 /* Testexmp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520F8CBC2AB8BFD3007BB170 /* Testexmp.swift */; };
 		52A135A62AA36048005C36D4 /* nextexampel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A135A52AA36048005C36D4 /* nextexampel.swift */; };
@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		520F8CB82AB4BCF5007BB170 /* annotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = annotations.swift; sourceTree = "<group>"; };
+		520F8CB82AB4BCF5007BB170 /* Garage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Garage.swift; sourceTree = "<group>"; };
 		520F8CBA2AB4D975007BB170 /* UaserLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UaserLocation.swift; sourceTree = "<group>"; };
 		520F8CBC2AB8BFD3007BB170 /* Testexmp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testexmp.swift; sourceTree = "<group>"; };
 		52A135A52AA36048005C36D4 /* nextexampel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nextexampel.swift; sourceTree = "<group>"; };
@@ -49,7 +49,7 @@
 		520F8CB72AB4BCDA007BB170 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				520F8CB82AB4BCF5007BB170 /* annotations.swift */,
+				520F8CB82AB4BCF5007BB170 /* Garage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -191,7 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				520F8CB92AB4BCF5007BB170 /* annotations.swift in Sources */,
+				520F8CB92AB4BCF5007BB170 /* Garage.swift in Sources */,
 				F7873E672A7B07AD00DE4CE2 /* ContentView.swift in Sources */,
 				52A135A62AA36048005C36D4 /* nextexampel.swift in Sources */,
 				520F8CBD2AB8BFD3007BB170 /* Testexmp.swift in Sources */,

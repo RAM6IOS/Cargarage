@@ -18,7 +18,7 @@ struct Workshop: View {
    // @StateObject var locationManager = LocationManager()
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 36.552916, longitude: 3.128917), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
-    @State var presentedSheet: City?
+    @State var presentedSheet: Garage?
     
    // var exmple = City(name: <#String#>, coordinate: <#CLLocationCoordinate2D#>)
     
@@ -27,7 +27,7 @@ struct Workshop: View {
     var specialty:Array = ["Peinture" ,"scanner","électricité automobile","General mechanic","vidange" ,"clim auto"]
     
     @State  var searchText = ""
-    var searchableRecipe: [City] {
+    var searchableRecipe: [Garage] {
                 if  searchText.isEmpty{
                     return model.annotations
                 } else {
