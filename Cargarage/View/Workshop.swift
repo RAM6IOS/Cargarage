@@ -19,6 +19,8 @@ struct Workshop: View {
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 36.552916, longitude: 3.128917), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
     @State var presentedSheet: Garage?
+    @State private var isPresented = false
+
     
    // var exmple = City(name: <#String#>, coordinate: <#CLLocationCoordinate2D#>)
     
@@ -101,26 +103,50 @@ struct Workshop: View {
                     
                     
                 }
-                
-                
-                LocationButton(.currentLocation) {
-                    userLocation.requesAllowOnceLocationPermission()
+                VStack(spacing:5) {
+                    Button{
+                        isPresented.toggle()
+                        
+                    } label: {
+                        Image("settings")
+                            .resizable()
+                            .scaledToFit()
+                            .padding(5)
+                            
+                        
+                            
+                    }
+                    .background(.orange)
+                    .cornerRadius(8)
+                    .frame(width: 60 ,height: 60)
+                    .clipShape(Circle())
+                    .fullScreenCover(isPresented: $isPresented){
+                        Settings()
+                    }
+
+                    
+                   
+                    
+                    LocationButton(.currentLocation) {
+                        userLocation.requesAllowOnceLocationPermission()
+                    }
+                    .foregroundColor(.white)
+                    .background(.orange)
+                    .cornerRadius(8)
+                    
+                    //.frame(width: 100 ,height:200)
+                    .font(.system(size: 30))
+                    .clipShape(Circle())
+                    .padding(20)
+                    
+                    .labelStyle(.iconOnly)
+                    .symbolVariant(.fill)
+                    .tint(.orange)
                 }
-                .foregroundColor(.white)
-                .background(.orange)
-                .cornerRadius(8)
-                
-                //.frame(width: 100 ,height:200)
-                .font(.system(size: 30))
-                .clipShape(Circle())
-                .padding(20)
-                
-                .labelStyle(.iconOnly)
-                .symbolVariant(.fill)
-                .tint(.orange)
                 // .padding(.bottom, 70)
                 
             }.ignoresSafeArea(.all)
+                
                                        
                        }
                        
