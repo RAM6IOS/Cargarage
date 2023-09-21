@@ -22,9 +22,41 @@ struct Settings: View {
                             Text("about")
                         }
                     }
+                    HStack {
+                                                          Image(systemName: "i.circle")
+                                                          Link("Privacy Policy", destination: URL(string: "https://www.notion.so/Finding-Wat-fce51e5ee1494b578454b5c8a2fa5e16")!)
+                                                                      .foregroundColor(.black)
+                                                              }
+                    
+                    HStack {
+                                                                   Image(systemName: "paperplane.fill")
+                                                               Button {
+                                                                      // sendEmail.toggle()
+                                                               } label: {
+                                                                   HStack {
+                                                                       Text("Contact")
+                                                                           .foregroundColor(.black)
+                                                                   }
+                                                               }
+                                                                   }
                 }
             }
+            .toolbar {
+                                ToolbarItem(placement: .cancellationAction) {
+                                    Button {
+                                        dismiss()
+                                    } label: {
+                                        HStack {
+                                            Image(systemName: "arrow.left")
+                                            Text("Back")
+                                                
+                                        }
+                                        .foregroundColor(.black)
+                                    }
+                                }
+                            }
         }
+       
     }
 }
 
