@@ -24,7 +24,22 @@ struct Settings: View {
                     }
                 }
             }
+            .toolbar {
+                                ToolbarItem(placement: .cancellationAction) {
+                                    Button {
+                                        dismiss()
+                                    } label: {
+                                        HStack {
+                                            Image(systemName: "arrow.left")
+                                            Text("Back")
+                                                
+                                        }
+                                        .foregroundColor(.black)
+                                    }
+                                }
+                            }
         }
+       
     }
 }
 
