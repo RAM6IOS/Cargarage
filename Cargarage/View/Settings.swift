@@ -11,12 +11,20 @@ struct Settings: View {
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
-        ZStack {
-                    Color.primary.edgesIgnoringSafeArea(.all)
-                    Button("Dismiss Modal") {
-                        dismiss()
+        NavigationStack {
+            VStack {
+                List {
+                    NavigationLink {
+                        about()
+                    } label: {
+                        HStack {
+                            Image(systemName: "book")
+                            Text("about")
+                        }
                     }
                 }
+            }
+        }
     }
 }
 
