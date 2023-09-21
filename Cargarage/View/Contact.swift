@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Contact: View {
+    @ObservedObject var sendEmail = SendEmailVM()
     var body: some View {
         VStack{
             Text("senEmel")
