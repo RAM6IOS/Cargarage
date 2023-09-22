@@ -12,8 +12,6 @@ struct Settings: View {
     let constants = Contacting.shared
     @State private var sendEmail = false
 
-
-
     var body: some View {
         NavigationStack {
             VStack {
