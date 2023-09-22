@@ -13,8 +13,9 @@
 		520F8CC02ABB91C7007BB170 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520F8CBF2ABB91C7007BB170 /* Settings.swift */; };
 		520F8CC22ABB958E007BB170 /* about.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520F8CC12ABB958E007BB170 /* about.swift */; };
 		520F8CC42ABCEA65007BB170 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520F8CC32ABCEA65007BB170 /* Contact.swift */; };
-		520F8CC62ABCEB4D007BB170 /* SendEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520F8CC52ABCEB4D007BB170 /* SendEmail.swift */; };
+		520F8CC62ABCEB4D007BB170 /* SendEmailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520F8CC52ABCEB4D007BB170 /* SendEmailVM.swift */; };
 		520F8CCA2ABD006C007BB170 /* Teset1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520F8CC92ABD006C007BB170 /* Teset1.swift */; };
+		520F8CCC2ABDFAB5007BB170 /* EmailContacting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520F8CCB2ABDFAB5007BB170 /* EmailContacting.swift */; };
 		52A135A62AA36048005C36D4 /* nextexampel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A135A52AA36048005C36D4 /* nextexampel.swift */; };
 		52AC6EA62AA26EAB00F0E4B6 /* LocationManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AC6EA52AA26EAB00F0E4B6 /* LocationManger.swift */; };
 		F7873E652A7B07AD00DE4CE2 /* CargarageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7873E642A7B07AD00DE4CE2 /* CargarageApp.swift */; };
@@ -31,8 +32,9 @@
 		520F8CBF2ABB91C7007BB170 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		520F8CC12ABB958E007BB170 /* about.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = about.swift; sourceTree = "<group>"; };
 		520F8CC32ABCEA65007BB170 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
-		520F8CC52ABCEB4D007BB170 /* SendEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEmail.swift; sourceTree = "<group>"; };
+		520F8CC52ABCEB4D007BB170 /* SendEmailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEmailVM.swift; sourceTree = "<group>"; };
 		520F8CC92ABD006C007BB170 /* Teset1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teset1.swift; sourceTree = "<group>"; };
+		520F8CCB2ABDFAB5007BB170 /* EmailContacting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailContacting.swift; sourceTree = "<group>"; };
 		52A135A52AA36048005C36D4 /* nextexampel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nextexampel.swift; sourceTree = "<group>"; };
 		52AC6EA52AA26EAB00F0E4B6 /* LocationManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManger.swift; sourceTree = "<group>"; };
 		52AC6EA72AA289FE00F0E4B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				520F8CB82AB4BCF5007BB170 /* Garage.swift */,
+				520F8CCB2ABDFAB5007BB170 /* EmailContacting.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -77,7 +80,7 @@
 				52AC6EA52AA26EAB00F0E4B6 /* LocationManger.swift */,
 				52A135A52AA36048005C36D4 /* nextexampel.swift */,
 				520F8CBA2AB4D975007BB170 /* UaserLocation.swift */,
-				520F8CC52ABCEB4D007BB170 /* SendEmail.swift */,
+				520F8CC52ABCEB4D007BB170 /* SendEmailVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -206,8 +209,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				520F8CCC2ABDFAB5007BB170 /* EmailContacting.swift in Sources */,
 				520F8CB92AB4BCF5007BB170 /* Garage.swift in Sources */,
-				520F8CC62ABCEB4D007BB170 /* SendEmail.swift in Sources */,
+				520F8CC62ABCEB4D007BB170 /* SendEmailVM.swift in Sources */,
 				F7873E672A7B07AD00DE4CE2 /* ContentView.swift in Sources */,
 				52A135A62AA36048005C36D4 /* nextexampel.swift in Sources */,
 				520F8CBD2AB8BFD3007BB170 /* Testexmp.swift in Sources */,

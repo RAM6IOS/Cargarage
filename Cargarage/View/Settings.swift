@@ -9,6 +9,10 @@ import SwiftUI
 
 struct Settings: View {
     @Environment(\.dismiss) var dismiss
+    let constants = Contacting.shared
+    @State private var sendEmail = false
+
+
 
     var body: some View {
         NavigationStack {
@@ -31,13 +35,16 @@ struct Settings: View {
                     HStack {
                                                                    Image(systemName: "paperplane.fill")
                                                                Button {
-                                                                      // sendEmail.toggle()
+                                                                       sendEmail.toggle()
                                                                } label: {
                                                                    HStack {
                                                                        Text("Contact")
                                                                            .foregroundColor(.black)
                                                                    }
                                                                }
+                                                               .sheet(isPresented: $sendEmail) {
+                                                                                                                   MailView(content: constants.contentPreText, to: constants.to,subject: constants.subject)
+                                                                                                               }
                                                                    }
                 }
             }
