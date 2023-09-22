@@ -26,7 +26,7 @@ struct Workshop: View {
     
    // var annotations = [annotations]
    // @Published var source: Array = [Sources]()
-    var specialty:Array = ["General mechanic", "électricité automobile","Peinture" ,"scanner","vidange" ,"clim auto"]
+    var specialty:Array = ["General mechanic", "électricité automobile","Peinture" ,"scanner","vidange" ,"clim auto" ,"Equilibrage","suspension" ,"Garniture Auto" ,"GPL" ,"vitres auto","CLE  AUTO"]
     
     @State  var searchText = ""
     var searchableRecipe: [Garage] {
