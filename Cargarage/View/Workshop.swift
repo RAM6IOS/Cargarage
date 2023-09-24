@@ -64,6 +64,8 @@ struct Workshop: View {
                             Text(sheet.specialty)
                         }
                         .padding()
+                        .presentationDetents([.height(100)])
+                        
                         
                     }
                     ScrollView(.horizontal){
