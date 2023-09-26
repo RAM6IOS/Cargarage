@@ -19,6 +19,19 @@ import CoreLocationUI
         Garage(name: "Rome", coordinate: CLLocationCoordinate2D(latitude: 36.522696, longitude:3.148739), specialty: "électricité automobile" ,address:"blid ouldSelame" ,openingTime: "9:00" ,closingTime: "16:00"),
           // City(name: "Washington DC", coordinate: CLLocationCoordinate2D(latitude: 38.895111, longitude: -77.036667))
        ]
+     @Published  var searchText = ""
+     var searchableRecipe: [Garage] {
+                 if  searchText.isEmpty{
+                     return annotations
+                 } else {
+                     let lowercasedQuery = searchText.lowercased()
+                    
+                         return annotations.filter({
+                             $0.specialty.lowercased().contains(lowercasedQuery)
+                         })
+                 }
+             }
+     @Published   var specialty:Array = ["General mechanic", "électricité automobile","Peinture" ,"scanner","vidange" ,"clim auto" ,"Equilibrage","suspension" ,"Garniture Auto" ,"GPL" ,"vitres auto","CLE  AUTO"]
       var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 36.552916, longitude:  3.128917), span: MKCoordinateSpan(latitudeDelta: 0.9, longitudeDelta: 0.9))
     var locationManger =  CLLocationManager()
     override init() {
