@@ -14,7 +14,7 @@ import CoreLocationUI
 
 struct Workshop: View {
     @StateObject var model = LocationManger()
-    @ObservedObject var userLocation = UserLocation()
+    @StateObject  var userLocation = UserLocation()
     @State var presentedSheet: Garage?
     @State private var isPresented = false
     var body: some View {
@@ -37,39 +37,11 @@ struct Workshop: View {
                     }
                     Specialtybutton()
                 }
-                VStack(spacing:5) {
-                    Button{
-                        isPresented.toggle()
-                        
-                    } label: {
-                        Image("settings")
-                            .resizable()
-                            .scaledToFit()
-                            .padding(5)
-                    }
-                    .background(.orange)
-                    .cornerRadius(8)
-                    .frame(width: 60 ,height: 60)
-                    .clipShape(Circle())
-                    .fullScreenCover(isPresented: $isPresented){
-                        Settings()
-                    }
-                    LocationButton(.currentLocation) {
-                        userLocation.requesAllowOnceLocationPermission()
-                    }
-                    .foregroundColor(.white)
-                    .background(.orange)
-                    .cornerRadius(8)
-                    .font(.system(size: 30))
-                    .clipShape(Circle())
-                    .padding(20)
-                    .labelStyle(.iconOnly)
-                    .symbolVariant(.fill)
-                    .tint(.orange)
-                }
+               ButtonSettings()
             }.ignoresSafeArea(.all)
                        }
          .environmentObject(model)
+         .environmentObject(userLocation)
                    }
     }
 
