@@ -13,7 +13,7 @@ import CoreLocationUI
 
 
 struct Workshop: View {
-    @ObservedObject  var model =  LocationManger()
+    @StateObject var model = LocationManger()
     @ObservedObject var userLocation = UserLocation()
     @State var presentedSheet: Garage?
     @State private var isPresented = false
@@ -35,32 +35,7 @@ struct Workshop: View {
                     .sheet(item: $presentedSheet) { sheet in
                         GarageDetails()
                     }
-                    ScrollView(.horizontal){
-                        HStack{
-                            ForEach(model.specialty, id: \.self) { specialty in
-                                Button{
-                                    model.searchText = specialty
-                                } label: {
-                                    HStack(spacing: 8){
-                                        Image(specialty)
-                                            .resizable()
-                                            .frame(width: 30 ,height: 30)
-                                        Text(specialty)
-                                    }
-                                    .foregroundColor(.black)
-                                    .font(.body)
-                                    .padding(.vertical ,10)
-                                    .padding(.horizontal ,20)
-                                }
-                                .cornerRadius(10)
-                                .background(.orange)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                            }
-                        }
-                        .padding(.vertical,70)
-                       .padding(.horizontal ,20)
-                    }
+                    Specialtybutton()
                 }
                 VStack(spacing:5) {
                     Button{
@@ -94,6 +69,7 @@ struct Workshop: View {
                 }
             }.ignoresSafeArea(.all)
                        }
+         .environmentObject(model)
                    }
     }
 
