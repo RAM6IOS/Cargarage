@@ -15,6 +15,8 @@
 		520F8CC62ABCEB4D007BB170 /* SendEmailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520F8CC52ABCEB4D007BB170 /* SendEmailVM.swift */; };
 		520F8CCC2ABDFAB5007BB170 /* EmailContacting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520F8CCB2ABDFAB5007BB170 /* EmailContacting.swift */; };
 		520F8CCE2AC37A81007BB170 /* GarageDetails .swift in Sources */ = {isa = PBXBuildFile; fileRef = 520F8CCD2AC37A81007BB170 /* GarageDetails .swift */; };
+		523541192AC4BABE00C24C4E /* Specialtybutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523541182AC4BABE00C24C4E /* Specialtybutton.swift */; };
+		5235411B2AC4C9AD00C24C4E /* ButtonSettings .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5235411A2AC4C9AD00C24C4E /* ButtonSettings .swift */; };
 		52AC6EA62AA26EAB00F0E4B6 /* LocationManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AC6EA52AA26EAB00F0E4B6 /* LocationManger.swift */; };
 		F7873E652A7B07AD00DE4CE2 /* CargarageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7873E642A7B07AD00DE4CE2 /* CargarageApp.swift */; };
 		F7873E672A7B07AD00DE4CE2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7873E662A7B07AD00DE4CE2 /* ContentView.swift */; };
@@ -32,6 +34,8 @@
 		520F8CC52ABCEB4D007BB170 /* SendEmailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEmailVM.swift; sourceTree = "<group>"; };
 		520F8CCB2ABDFAB5007BB170 /* EmailContacting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailContacting.swift; sourceTree = "<group>"; };
 		520F8CCD2AC37A81007BB170 /* GarageDetails .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GarageDetails .swift"; sourceTree = "<group>"; };
+		523541182AC4BABE00C24C4E /* Specialtybutton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Specialtybutton.swift; sourceTree = "<group>"; };
+		5235411A2AC4C9AD00C24C4E /* ButtonSettings .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ButtonSettings .swift"; sourceTree = "<group>"; };
 		52AC6EA52AA26EAB00F0E4B6 /* LocationManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManger.swift; sourceTree = "<group>"; };
 		52AC6EA72AA289FE00F0E4B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F7873E612A7B07AD00DE4CE2 /* Cargarage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cargarage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +72,16 @@
 			children = (
 			);
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		523541172AC4B8FE00C24C4E /* WorksShop */ = {
+			isa = PBXGroup;
+			children = (
+				F78DDD1F2A830E4F008CC70C /* Workshop.swift */,
+				523541182AC4BABE00C24C4E /* Specialtybutton.swift */,
+				5235411A2AC4C9AD00C24C4E /* ButtonSettings .swift */,
+			);
+			path = WorksShop;
 			sourceTree = "<group>";
 		};
 		52AC6EA42AA26E6700F0E4B6 /* ViewModel */ = {
@@ -124,7 +138,7 @@
 		F78DDD1E2A830DE9008CC70C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F78DDD1F2A830E4F008CC70C /* Workshop.swift */,
+				523541172AC4B8FE00C24C4E /* WorksShop */,
 				520F8CBC2AB8BFD3007BB170 /* Testexmp.swift */,
 				520F8CBF2ABB91C7007BB170 /* Settings.swift */,
 				520F8CC12ABB958E007BB170 /* about.swift */,
@@ -208,6 +222,7 @@
 				520F8CC62ABCEB4D007BB170 /* SendEmailVM.swift in Sources */,
 				F7873E672A7B07AD00DE4CE2 /* ContentView.swift in Sources */,
 				520F8CBD2AB8BFD3007BB170 /* Testexmp.swift in Sources */,
+				5235411B2AC4C9AD00C24C4E /* ButtonSettings .swift in Sources */,
 				520F8CBB2AB4D975007BB170 /* UaserLocation.swift in Sources */,
 				520F8CC22ABB958E007BB170 /* about.swift in Sources */,
 				F78DDD202A830E4F008CC70C /* Workshop.swift in Sources */,
@@ -215,6 +230,7 @@
 				520F8CCE2AC37A81007BB170 /* GarageDetails .swift in Sources */,
 				52AC6EA62AA26EAB00F0E4B6 /* LocationManger.swift in Sources */,
 				F7873E652A7B07AD00DE4CE2 /* CargarageApp.swift in Sources */,
+				523541192AC4BABE00C24C4E /* Specialtybutton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
