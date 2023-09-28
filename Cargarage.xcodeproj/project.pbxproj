@@ -17,12 +17,12 @@
 		520F8CCE2AC37A81007BB170 /* GarageDetails .swift in Sources */ = {isa = PBXBuildFile; fileRef = 520F8CCD2AC37A81007BB170 /* GarageDetails .swift */; };
 		523541192AC4BABE00C24C4E /* Specialtybutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523541182AC4BABE00C24C4E /* Specialtybutton.swift */; };
 		5235411B2AC4C9AD00C24C4E /* ButtonSettings .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5235411A2AC4C9AD00C24C4E /* ButtonSettings .swift */; };
-		52AC6EA62AA26EAB00F0E4B6 /* LocationManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AC6EA52AA26EAB00F0E4B6 /* LocationManger.swift */; };
+		52AC6EA62AA26EAB00F0E4B6 /* GarageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AC6EA52AA26EAB00F0E4B6 /* GarageViewModel.swift */; };
 		F7873E652A7B07AD00DE4CE2 /* CargarageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7873E642A7B07AD00DE4CE2 /* CargarageApp.swift */; };
 		F7873E672A7B07AD00DE4CE2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7873E662A7B07AD00DE4CE2 /* ContentView.swift */; };
 		F7873E692A7B07B300DE4CE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7873E682A7B07B300DE4CE2 /* Assets.xcassets */; };
 		F7873E6D2A7B07B300DE4CE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7873E6C2A7B07B300DE4CE2 /* Preview Assets.xcassets */; };
-		F78DDD202A830E4F008CC70C /* Workshop.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78DDD1F2A830E4F008CC70C /* Workshop.swift */; };
+		F78DDD202A830E4F008CC70C /* GarageMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78DDD1F2A830E4F008CC70C /* GarageMap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +36,7 @@
 		520F8CCD2AC37A81007BB170 /* GarageDetails .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GarageDetails .swift"; sourceTree = "<group>"; };
 		523541182AC4BABE00C24C4E /* Specialtybutton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Specialtybutton.swift; sourceTree = "<group>"; };
 		5235411A2AC4C9AD00C24C4E /* ButtonSettings .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ButtonSettings .swift"; sourceTree = "<group>"; };
-		52AC6EA52AA26EAB00F0E4B6 /* LocationManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManger.swift; sourceTree = "<group>"; };
+		52AC6EA52AA26EAB00F0E4B6 /* GarageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageViewModel.swift; sourceTree = "<group>"; };
 		52AC6EA72AA289FE00F0E4B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F7873E612A7B07AD00DE4CE2 /* Cargarage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cargarage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7873E642A7B07AD00DE4CE2 /* CargarageApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargarageApp.swift; sourceTree = "<group>"; };
@@ -44,7 +44,7 @@
 		F7873E682A7B07B300DE4CE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7873E6A2A7B07B300DE4CE2 /* Cargarage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cargarage.entitlements; sourceTree = "<group>"; };
 		F7873E6C2A7B07B300DE4CE2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F78DDD1F2A830E4F008CC70C /* Workshop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workshop.swift; sourceTree = "<group>"; };
+		F78DDD1F2A830E4F008CC70C /* GarageMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageMap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,20 +74,20 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
-		523541172AC4B8FE00C24C4E /* WorksShop */ = {
+		523541172AC4B8FE00C24C4E /* GarageMap */ = {
 			isa = PBXGroup;
 			children = (
-				F78DDD1F2A830E4F008CC70C /* Workshop.swift */,
+				F78DDD1F2A830E4F008CC70C /* GarageMap.swift */,
 				523541182AC4BABE00C24C4E /* Specialtybutton.swift */,
 				5235411A2AC4C9AD00C24C4E /* ButtonSettings .swift */,
 			);
-			path = WorksShop;
+			path = GarageMap;
 			sourceTree = "<group>";
 		};
 		52AC6EA42AA26E6700F0E4B6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				52AC6EA52AA26EAB00F0E4B6 /* LocationManger.swift */,
+				52AC6EA52AA26EAB00F0E4B6 /* GarageViewModel.swift */,
 				520F8CBA2AB4D975007BB170 /* UaserLocation.swift */,
 				520F8CC52ABCEB4D007BB170 /* SendEmailVM.swift */,
 			);
@@ -138,7 +138,7 @@
 		F78DDD1E2A830DE9008CC70C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				523541172AC4B8FE00C24C4E /* WorksShop */,
+				523541172AC4B8FE00C24C4E /* GarageMap */,
 				520F8CBC2AB8BFD3007BB170 /* Testexmp.swift */,
 				520F8CBF2ABB91C7007BB170 /* Settings.swift */,
 				520F8CC12ABB958E007BB170 /* about.swift */,
@@ -225,10 +225,10 @@
 				5235411B2AC4C9AD00C24C4E /* ButtonSettings .swift in Sources */,
 				520F8CBB2AB4D975007BB170 /* UaserLocation.swift in Sources */,
 				520F8CC22ABB958E007BB170 /* about.swift in Sources */,
-				F78DDD202A830E4F008CC70C /* Workshop.swift in Sources */,
+				F78DDD202A830E4F008CC70C /* GarageMap.swift in Sources */,
 				520F8CC02ABB91C7007BB170 /* Settings.swift in Sources */,
 				520F8CCE2AC37A81007BB170 /* GarageDetails .swift in Sources */,
-				52AC6EA62AA26EAB00F0E4B6 /* LocationManger.swift in Sources */,
+				52AC6EA62AA26EAB00F0E4B6 /* GarageViewModel.swift in Sources */,
 				F7873E652A7B07AD00DE4CE2 /* CargarageApp.swift in Sources */,
 				523541192AC4BABE00C24C4E /* Specialtybutton.swift in Sources */,
 			);

@@ -12,8 +12,8 @@ import CoreLocationUI
 
 
 
-struct Workshop: View {
-    @StateObject var model = LocationManger()
+struct GarageMap: View {
+    @StateObject var model = GarageViewModel()
     @StateObject  var userLocation = UserLocation()
     @State var presentedSheet: Garage?
     @State private var isPresented = false
@@ -46,9 +46,9 @@ struct Workshop: View {
     }
 
 
-struct Workshop_Previews: PreviewProvider {
+struct GarageMap_Previews: PreviewProvider {
     static var previews: some View {
-        Workshop()
+        GarageMap()
     }
 }
 
