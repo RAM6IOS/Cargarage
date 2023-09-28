@@ -366,6 +366,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cargarage/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "may location";
+				INFOPLIST_KEY_NSLocationUsageDescription = "my location user";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need access to your microphone to make calls.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -407,6 +409,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cargarage/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "may location";
+				INFOPLIST_KEY_NSLocationUsageDescription = "my location user";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need access to your microphone to make calls.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

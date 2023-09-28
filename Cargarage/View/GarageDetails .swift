@@ -6,8 +6,15 @@
 //
 
 import SwiftUI
+import CallKit
+import CoreLocation
+import CoreLocationUI
+import MapKit
+
 
 struct GarageDetails: View {
+    let callController = CXCallController()
+
     var body: some View {
         VStack(spacing: 20){
             Image("user")
@@ -35,6 +42,17 @@ struct GarageDetails: View {
                     }
                     HStack{
                         Button{
+                            let handle = CXHandle(type: .generic, value: "+213553058879") // رقم الهاتف الذي تريد الاتصال به
+                                       let startCallAction = CXStartCallAction(call: UUID(), handle: handle)
+                                       let transaction = CXTransaction(action: startCallAction)
+                                       
+                                       callController.request(transaction) { error in
+                                           if let error = error {
+                                               print("Failed to start call: \(error.localizedDescription)")
+                                           } else {
+                                               print("Call started successfully")
+                                           }
+                                       }
                             
                         } label: {
                            
@@ -53,7 +71,8 @@ struct GarageDetails: View {
                         //.padding(20)
                        
                         Button{
-                            
+                            openMap(coordinate: CLLocationCoordinate2D(latitude: 36.422696
+                                                                                            , longitude: 3.148739))
                         } label: {
                             
                                 Image(systemName: "location.fill")
@@ -104,6 +123,10 @@ struct GarageDetails: View {
     Spacer()
     .presentationDetents([.medium])
     }
+    func openMap(coordinate: CLLocationCoordinate2D) {
+            let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate))
+            mapItem.openInMaps()
+        }
 }
 
 struct GarageDetails_Previews: PreviewProvider {
