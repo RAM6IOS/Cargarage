@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Testexmp: View {
-    @ObservedObject var userLocation = LocationManger()
+    @ObservedObject var userLocation = GarageViewModel()
     @State  var searchText = ""
     
     

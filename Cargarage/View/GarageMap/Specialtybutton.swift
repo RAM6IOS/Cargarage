@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Specialtybutton: View {
-     @EnvironmentObject  var model :  LocationManger
+     @EnvironmentObject  var model :  GarageViewModel
     var body: some View {
         ScrollView(.horizontal){
             HStack{
