@@ -14,10 +14,11 @@ import MapKit
 
 struct GarageDetails: View {
     let callController = CXCallController()
+    var garage : Garage
 
     var body: some View {
         VStack(spacing: 20){
-            Image("user")
+            Image(garage.image ?? "user")
                 .resizable()
                 .scaledToFill()
                 .frame(width: 70, height: 70)
@@ -26,26 +27,25 @@ struct GarageDetails: View {
                     HStack(spacing: 20){
                         Image(systemName: "person.fill")
                             .font(.system(size: 20))
-                        Text("MECA DIAG AUTO")
+                        Text(garage.name)
                     }
                     HStack(spacing: 20){
                         Image("location")
                             .resizable()
                             .scaledToFill()
                             .frame(width: 25, height: 25)
-                        Text("N02 Rue Gallieni Beaufraisier Oued Koriche")
+                        Text(garage.address ?? " dont available")
                     }
                     HStack(spacing: 20){
                         Image(systemName: "person.crop.circle.badge.clock")
                             .font(.system(size: 20))
-                        Text("09:00 - 16:00")
+                        Text("\(garage.openingTime ?? "dont availabl") - \(garage.closingTime ?? "dont availabl")")
                     }
                     HStack{
                         Button{
-                            let handle = CXHandle(type: .generic, value: "+213553058879") // رقم الهاتف الذي تريد الاتصال به
+                            let handle = CXHandle(type: .generic, value: "+213\(String(describing: garage.phone))") // رقم الهاتف الذي تريد الاتصال به
                                        let startCallAction = CXStartCallAction(call: UUID(), handle: handle)
                                        let transaction = CXTransaction(action: startCallAction)
-                                       
                                        callController.request(transaction) { error in
                                            if let error = error {
                                                print("Failed to start call: \(error.localizedDescription)")
@@ -55,37 +55,26 @@ struct GarageDetails: View {
                                        }
                             
                         } label: {
-                           
                                 Image(systemName: "phone.fill")
                                 .padding(10)
-                                
-                        
                         }
                         .foregroundColor(.white)
                         .background(.orange)
                         .cornerRadius(8)
-                        
-                        //.frame(width: 100 ,height:200)
                         .font(.system(size: 20))
                         .clipShape(Circle())
-                        //.padding(20)
                        
                         Button{
-                            openMap(coordinate: CLLocationCoordinate2D(latitude: 36.422696
-                                                                                            , longitude: 3.148739))
+                            openMap(coordinate: CLLocationCoordinate2D(latitude: garage.coordinate.latitude
+                                                                       , longitude: garage.coordinate.longitude))
                         } label: {
-                            
                                 Image(systemName: "location.fill")
                                     .font(.system(size: 20))
                                     .padding(10)
-                                
-                            
                         }
                         .foregroundColor(.white)
                         .background(.orange)
                         .cornerRadius(8)
-                        
-                        //.frame(width: 100 ,height:200)
                         .font(.system(size: 20))
                         .clipShape(Circle())
                     }
@@ -107,16 +96,12 @@ struct GarageDetails: View {
                                     .background(.orange)
                                     .foregroundColor(.black)
                                     .cornerRadius(10)
-                                
                             }
                         }
-                        
                     }
-                    
                 }
                 Spacer()
             }
-            
         }
         .padding(.top ,20)
     .padding()
@@ -131,6 +116,6 @@ struct GarageDetails: View {
 
 struct GarageDetails_Previews: PreviewProvider {
     static var previews: some View {
-        GarageDetails()
+        GarageDetails(garage: Garage(name: "London", coordinate: CLLocationCoordinate2D(latitude:36.552696, longitude: 3.108739) ,specialty:"Peinture",address:"blid ouldSelame", phone: "O553556677", image: "user" ,openingTime: "9:00" ,closingTime: "16:00"))
     }
 }

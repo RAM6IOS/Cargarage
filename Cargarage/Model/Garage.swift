@@ -18,7 +18,8 @@ struct Garage: Identifiable{
     let coordinate: CLLocationCoordinate2D
     let specialty : String
     let address : String?
-   // let image:String?
+    let phone:String?
+    let image:String?
     let openingTime:String?
     let closingTime:String?
     

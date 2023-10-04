@@ -79,6 +79,7 @@
 			children = (
 				F78DDD1F2A830E4F008CC70C /* GarageMap.swift */,
 				523541182AC4BABE00C24C4E /* Specialtybutton.swift */,
+				520F8CCD2AC37A81007BB170 /* GarageDetails .swift */,
 				5235411A2AC4C9AD00C24C4E /* ButtonSettings .swift */,
 			);
 			path = GarageMap;
@@ -142,7 +143,6 @@
 				520F8CBC2AB8BFD3007BB170 /* Testexmp.swift */,
 				520F8CBF2ABB91C7007BB170 /* Settings.swift */,
 				520F8CC12ABB958E007BB170 /* about.swift */,
-				520F8CCD2AC37A81007BB170 /* GarageDetails .swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
