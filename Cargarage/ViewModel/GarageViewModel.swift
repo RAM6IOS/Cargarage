@@ -13,13 +13,13 @@ import CoreLocationUI
  class GarageViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var isPresenting = false
      @Published     var annotations = [
-        Garage(name: "London", coordinate: CLLocationCoordinate2D(latitude:36.552696, longitude: 3.108739) ,specialty:"Peinture",address:"blid ouldSelame" ,openingTime: "9:00" ,closingTime: "16:00"),
+        Garage(name: "London", coordinate: CLLocationCoordinate2D(latitude:36.552696, longitude: 3.108739) ,specialty:"Peinture",address:"blid ouldSelame", phone: "O553556677", image: "user" ,openingTime: "9:00" ,closingTime: "16:00"),
         Garage(name: "Paris", coordinate: CLLocationCoordinate2D(latitude:36.542696 , longitude:  3.128739), specialty: "scanner"
-               ,address:"blid ouldSelame" ,openingTime: "9:00" ,closingTime: "16:00"),
-        Garage(name: "Rome", coordinate: CLLocationCoordinate2D(latitude: 36.522696, longitude:3.148739), specialty: "électricité automobile" ,address:"blid ouldSelame" ,openingTime: "9:00" ,closingTime: "16:00"),
-        Garage(name: "Blida", coordinate: CLLocationCoordinate2D(latitude: 36.422696, longitude:3.148739), specialty: "électricité automobile" ,address:"blid ouldSelame" ,openingTime: "9:00" ,closingTime: "16:00"),
-        Garage(name: "Blida", coordinate: CLLocationCoordinate2D(latitude: 36.402696, longitude:3.148739), specialty: "électricité automobile" ,address:"blid ouldSelame" ,openingTime: "9:00" ,closingTime: "16:00"),
-        Garage(name: "Blida", coordinate: CLLocationCoordinate2D(latitude: 35.002696, longitude:3.048739), specialty: "électricité automobile" ,address:"blid ouldSelame" ,openingTime: "9:00" ,closingTime: "16:00"),
+               ,address:"blid ouldSelame", phone: "O553556677", image: "use" ,openingTime: "9:00" ,closingTime: "16:00"),
+        Garage(name: "Rome", coordinate: CLLocationCoordinate2D(latitude: 36.522696, longitude:3.148739), specialty: "électricité automobile" ,address:"blid ouldSelame", phone: "O553556677", image: "user" ,openingTime: "9:00" ,closingTime: "16:00"),
+        Garage(name: "Blida", coordinate: CLLocationCoordinate2D(latitude: 36.422696, longitude:3.148739), specialty: "électricité automobile" ,address:"blid ouldSelame", phone: "O553556677", image: "user" ,openingTime: "9:00" ,closingTime: "16:00"),
+        Garage(name: "Blida", coordinate: CLLocationCoordinate2D(latitude: 36.402696, longitude:3.148739), specialty: "électricité automobile" ,address:"blid ouldSelame", phone: "O553556677", image: "user" ,openingTime: "9:00" ,closingTime: "16:00"),
+        Garage(name: "Blida", coordinate: CLLocationCoordinate2D(latitude: 35.002696, longitude:3.048739), specialty: "électricité automobile" ,address:"blid ouldSelame", phone: "O553556677", image: "user" ,openingTime: "9:00" ,closingTime: "16:00"),
           
        ]
      @Published  var searchText = ""
