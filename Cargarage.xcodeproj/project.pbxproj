@@ -17,6 +17,8 @@
 		520F8CCE2AC37A81007BB170 /* GarageDetails .swift in Sources */ = {isa = PBXBuildFile; fileRef = 520F8CCD2AC37A81007BB170 /* GarageDetails .swift */; };
 		523541192AC4BABE00C24C4E /* Specialtybutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523541182AC4BABE00C24C4E /* Specialtybutton.swift */; };
 		5235411B2AC4C9AD00C24C4E /* ButtonSettings .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5235411A2AC4C9AD00C24C4E /* ButtonSettings .swift */; };
+		524BB9642AD46EAE00262116 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 524BB9632AD46EAE00262116 /* FirebaseAnalytics */; };
+		524BB9662AD46EAE00262116 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 524BB9652AD46EAE00262116 /* FirebaseFirestore */; };
 		52AC6EA62AA26EAB00F0E4B6 /* GarageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AC6EA52AA26EAB00F0E4B6 /* GarageViewModel.swift */; };
 		F7873E652A7B07AD00DE4CE2 /* CargarageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7873E642A7B07AD00DE4CE2 /* CargarageApp.swift */; };
 		F7873E672A7B07AD00DE4CE2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7873E662A7B07AD00DE4CE2 /* ContentView.swift */; };
@@ -52,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				524BB9642AD46EAE00262116 /* FirebaseAnalytics in Frameworks */,
+				524BB9662AD46EAE00262116 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +167,10 @@
 			dependencies = (
 			);
 			name = Cargarage;
+			packageProductDependencies = (
+				524BB9632AD46EAE00262116 /* FirebaseAnalytics */,
+				524BB9652AD46EAE00262116 /* FirebaseFirestore */,
+			);
 			productName = Cargarage;
 			productReference = F7873E612A7B07AD00DE4CE2 /* Cargarage.app */;
 			productType = "com.apple.product-type.application";
@@ -191,6 +199,9 @@
 				Base,
 			);
 			mainGroup = F7873E582A7B07AD00DE4CE2;
+			packageReferences = (
+				524BB9622AD46EAE00262116 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = F7873E622A7B07AD00DE4CE2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -458,6 +469,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		524BB9622AD46EAE00262116 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		524BB9632AD46EAE00262116 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 524BB9622AD46EAE00262116 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		524BB9652AD46EAE00262116 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 524BB9622AD46EAE00262116 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F7873E592A7B07AD00DE4CE2 /* Project object */;
 }
