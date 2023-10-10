@@ -33,11 +33,11 @@ struct GarageMap: View {
                         }
                     }
                     .sheet(item: $presentedSheet) { sheet in
-                        GarageDetails(garage: Garage(name: sheet.name, coordinate: sheet.coordinate, specialty: sheet.specialty, address: sheet.address, phone: sheet.phone, image: sheet.image, openingTime: sheet.openingTime, closingTime: sheet.closingTime))
+                        
                     }
                     Specialtybutton()
                 }
-               ButtonSettings()
+                ButtonSettings()
             }.ignoresSafeArea(.all)
                        }
          .environmentObject(model)

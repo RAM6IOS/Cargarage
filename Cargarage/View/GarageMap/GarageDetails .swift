@@ -114,8 +114,3 @@ struct GarageDetails: View {
         }
 }
 
-struct GarageDetails_Previews: PreviewProvider {
-    static var previews: some View {
-        GarageDetails(garage: Garage(name: "London", coordinate: CLLocationCoordinate2D(latitude:36.552696, longitude: 3.108739) ,specialty:"Peinture",address:"blid ouldSelame", phone: "O553556677", image: "user" ,openingTime: "9:00" ,closingTime: "16:00"))
-    }
-}

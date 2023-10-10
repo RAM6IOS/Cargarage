@@ -11,7 +11,7 @@ import CoreLocation
 import CoreLocationUI
 
 class UserLocation: NSObject, ObservableObject, CLLocationManagerDelegate {
-    @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 36.552916, longitude:  3.128917), span: MKCoordinateSpan(latitudeDelta: 0.9, longitudeDelta: 0.9))
+    @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 36.552916, longitude:3.128917), span: MKCoordinateSpan(latitudeDelta: 0.9, longitudeDelta: 0.9))
    var locationManger =  CLLocationManager()
    override init() {
        super.init()
