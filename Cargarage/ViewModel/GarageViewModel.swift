@@ -16,7 +16,10 @@ import Firebase
     @Published var isPresenting = false
      
      @Published  var searchText = ""
-     
+     override init() {
+         super.init()
+         fetchDataGarage()
+     }
     
      var searchableRecipe: [Garage] {
                  if  searchText.isEmpty{
