@@ -11,9 +11,8 @@ import CoreLocation
 import CoreLocationUI
 
 
-
 struct GarageMap: View {
-    @StateObject var model = GarageViewModel()
+    @ObservedObject var model = GarageViewModel()
     @StateObject  var userLocation = UserLocation()
     @State var presentedSheet: Garage?
     @State private var isPresented = false
@@ -42,10 +41,7 @@ struct GarageMap: View {
                        }
          .environmentObject(model)
          .environmentObject(userLocation)
-         .onAppear{
-             model.fetchDataGarage()
-         }
-                   }
+                            }
     }
 
 
