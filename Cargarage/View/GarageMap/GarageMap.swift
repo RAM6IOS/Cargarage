@@ -42,6 +42,9 @@ struct GarageMap: View {
                        }
          .environmentObject(model)
          .environmentObject(userLocation)
+         .onAppear{
+             model.fetchDataGarage()
+         }
                    }
     }
 
