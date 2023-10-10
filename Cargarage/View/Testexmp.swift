@@ -6,111 +6,104 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseFirestore
+import FirebaseFirestoreSwift
+ struct Testexmp: View {
+   @ObservedObject var userLocation = GarageViewModel()
+ @State  var searchText = ""
+    // @State  var garage = [Garage]()
+     @ObservedObject var viewModel = TaskViewModel()
 
-struct Testexmp: View {
-    @ObservedObject var userLocation = GarageViewModel()
-    @State  var searchText = ""
-    
-    
-    var searchableRecipe: [Garage] {
-                if  searchText.isEmpty{
-                    return userLocation.annotations
-                } else {
-                    let lowercasedQuery = searchText.lowercased()
-                   
-                        return userLocation.annotations.filter({
-                            $0.specialty.lowercased().contains(lowercasedQuery)
-                        })
-                }
-            }
-    var body: some View {
-        VStack {
-            ScrollView(.horizontal){
-                HStack(spacing: 20){
-                    Button{
-                      searchText = "Peinture"
-                    } label: {
-                        Text("Peinture")
-                            .padding(.vertical ,10)
-                            .padding(.horizontal ,20)
-                    }
-                    .cornerRadius(10)
-                    .background(.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                    Button{
-                        searchText = "scanner"
-                    } label: {
-                        Text("scanner")
-                            .padding(.vertical ,10)
-                            .padding(.horizontal ,20)
-                    }
-                   
-                    .background(.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                    Button{
-                        searchText = "électricité automobile"
-                    } label: {
-                        Text("électricité automobile")
-                            .padding(.vertical ,10)
-                            .padding(.horizontal ,20)
-                    }
-                   
-                    
-                    .background(.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                    Button{
-                        
-                    } label: {
-                        Text("General mechanic")
-                            .padding(.vertical ,10)
-                            .padding(.horizontal ,20)
-                    }
-                    .background(.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                   
-                    Button{
-                        
-                    } label: {
-                        Text("vidange")
-                            .padding(.vertical ,10)
-                            .padding(.horizontal ,20)
-                    }
-                    
-                    .background(.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                    Button{
-                        
-                    } label: {
-                        Text("clim auto")
-                            .padding(.vertical ,10)
-                            .padding(.horizontal ,20)
-                    }
-                    .background(.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                }
-            }
-            .padding(.vertical,70)
-            .padding(.horizontal ,20)
-            ForEach(searchableRecipe ){ slocti in
-                VStack {
-                    Text(slocti.name)
-                    Text(slocti.specialty)
-                }
-                .padding()
-                
-            }
-        }
-    }
+ var body: some View {
+     VStack {
+         List(userLocation.garage, id: \.id) { task in
+                    Text(task.name)
+                 Text(task.specialty)
+             Text(task.address ?? "nill")
+             Text(task.phone ?? "nill")
+             Text(task.openingTime ?? "00:00")
+             Text(task.closingTime ?? "12:00")
+             Text((String(task.coordinate.latitude)))
+             Text(String(task.coordinate.longitude))
+             Image(task.image ?? "user")
+                 .resizable()
+                 .scaledToFill()
+                 .frame(width: 70, height: 70)
+            
+            
+                 }
+                 .onAppear {
+                     userLocation.fetchDataGarage()
+                 }
+     }
+ }
+     func fetchData() {
+         
+         Firestore.firestore().collection("garage").addSnapshotListener { (querySnapshot, error) in
+             guard let documents = querySnapshot?.documents else {
+                 print("Error fetching documents: \(error!)")
+                 return
+             }
+             
+             self.userLocation.garage = documents.compactMap { document in
+                 do {
+                     let task = try document.data(as: Garage.self)
+                     return task
+                 } catch {
+                     print(error)
+                     return nil
+                 }
+             }
+             
+             
+         }
+     }
+     
+     
+ }
+ 
+ struct Testexmp_Previews: PreviewProvider {
+ static var previews: some View {
+ Testexmp()
+ }
+ }
+ 
+struct Task : Decodable {
+    //var id: String
+    @DocumentID var id: String?
+    var title: String
+    //var completed: Bool
+    enum CodingKeys: String, CodingKey {
+           //case id
+           case title
+           //case completed
+       }
+    //self.completed = completed
+        
 }
 
-struct Testexmp_Previews: PreviewProvider {
-    static var previews: some View {
-        Testexmp()
+class TaskViewModel: ObservableObject {
+    private var db = Firestore.firestore()
+
+    @Published var tasks = [Task]()
+
+    func fetchData() {
+        db.collection("tasks").addSnapshotListener { (querySnapshot, error) in
+            guard let documents = querySnapshot?.documents else {
+                print("Error fetching documents: \(error!)")
+                return
+            }
+
+            self.tasks = documents.compactMap { document in
+                do {
+                    let task = try document.data(as: Task.self)
+                    return task
+                } catch {
+                    print(error)
+                    return nil
+                }
+            }
+        }
     }
 }

@@ -9,31 +9,37 @@ import Foundation
 import MapKit
 import CoreLocation
 import CoreLocationUI
+import Firebase
 
  class GarageViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
+     @Published var garage = [Garage]()
     @Published var isPresenting = false
-     @Published     var annotations = [
-        Garage(name: "London", coordinate: CLLocationCoordinate2D(latitude:36.552696, longitude: 3.108739) ,specialty:"Peinture",address:"blid ouldSelame", phone: "O553556677", image: "user" ,openingTime: "9:00" ,closingTime: "16:00"),
-        Garage(name: "Paris", coordinate: CLLocationCoordinate2D(latitude:36.542696 , longitude:  3.128739), specialty: "scanner"
-               ,address:"blid ouldSelame", phone: "O553556677", image: "use" ,openingTime: "9:00" ,closingTime: "16:00"),
-        Garage(name: "Rome", coordinate: CLLocationCoordinate2D(latitude: 36.522696, longitude:3.148739), specialty: "électricité automobile" ,address:"blid ouldSelame", phone: "O553556677", image: "user" ,openingTime: "9:00" ,closingTime: "16:00"),
-        Garage(name: "Blida", coordinate: CLLocationCoordinate2D(latitude: 36.422696, longitude:3.148739), specialty: "électricité automobile" ,address:"blid ouldSelame", phone: "O553556677", image: "user" ,openingTime: "9:00" ,closingTime: "16:00"),
-        Garage(name: "Blida", coordinate: CLLocationCoordinate2D(latitude: 36.402696, longitude:3.148739), specialty: "électricité automobile" ,address:"blid ouldSelame", phone: "O553556677", image: "user" ,openingTime: "9:00" ,closingTime: "16:00"),
-        Garage(name: "Blida", coordinate: CLLocationCoordinate2D(latitude: 35.002696, longitude:3.048739), specialty: "électricité automobile" ,address:"blid ouldSelame", phone: "O553556677", image: "user" ,openingTime: "9:00" ,closingTime: "16:00"),
-          
-       ]
+     
      @Published  var searchText = ""
+     
+    
      var searchableRecipe: [Garage] {
                  if  searchText.isEmpty{
-                     return annotations
+                     return garage
                  } else {
                      let lowercasedQuery = searchText.lowercased()
                     
-                         return annotations.filter({
-                             $0.specialty.lowercased().contains(lowercasedQuery)
+                         return garage.filter({
+                             $0.name.lowercased().contains(lowercasedQuery)
                          })
                  }
              }
+     func fetchDataGarage() {
+             Firestore.firestore().collection("garage").addSnapshotListener { (querySnapshot, error) in
+                             guard let documents = querySnapshot?.documents else {
+                               print("No documents")
+                               return
+                             }
+                             self.garage = documents.compactMap { (queryDocumentSnapshot) -> Garage? in
+                                 return try? queryDocumentSnapshot.data(as: Garage.self)
+                             }
+                         }
+         }
      @Published   var specialty:Array = ["General mechanic", "électricité automobile","Peinture" ,"scanner","vidange" ,"clim auto" ,"Equilibrage","suspension" ,"Garniture Auto" ,"GPL" ,"vitres auto","CLE  AUTO"]
       var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 36.552916, longitude:  3.128917), span: MKCoordinateSpan(latitudeDelta: 0.9, longitudeDelta: 0.9))
     
