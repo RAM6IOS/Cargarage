@@ -17,8 +17,8 @@ import FirebaseFirestoreSwift
 
 struct Garage: Identifiable, Codable, Hashable {
     @DocumentID var id: String?
-  var name: String
-  var specialty : String
+   var name: String
+    var specialty : [String]
    var address : String?
     var phone:String?
    var image:String?
@@ -38,11 +38,7 @@ struct Garage: Identifiable, Codable, Hashable {
          case image
          
        }
-    
-     
-    
-    
-    
+
   
 }
 
